@@ -1,0 +1,488 @@
+
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+
+:root {
+    --ink: #202b38;
+    --muted: #596579;
+    --line: #b8c7d9;
+    --paper: #ffffff;
+    --background: #f1f5f9;
+    --blue: #1769aa;
+    --light-blue: #d9efff;
+    --green: #16803c;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--blue);
+}
+
+
+/* =========================================
+   MAIN PAGE CONTAINER
+========================================= */
+
+.page {
+    width: min(100% - 40px, 1050px);
+    margin: auto;
+    background: var(--paper);
+    min-height: 100vh;
+    padding: 0 30px;
+}
+
+
+/* =========================================
+   TOP HEADER AND NAVIGATION
+========================================= */
+
+header {
+    padding: 25px 0;
+    border-bottom: 2px solid var(--line);
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 10px 18px;
+
+    background: var(--blue);
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+    background: #101010;
+    color: white;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main {
+    padding-bottom: 30px;
+}
+
+section {
+    padding: 45px 0;
+    scroll-margin-top: 20px;
+}
+
+h2 {
+    color: var(--blue);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--blue);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-section {
+    padding-top: 35px;
+}
+
+/* Profile photo at top left */
+
+.profile-photo {
+    width: 190px;
+    height: 190px;
+
+    overflow: hidden;
+
+    border: 3px solid var(--blue);
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Horizontal rule below photo */
+
+.home-rule {
+    border: none;
+    border-top: 2px solid var(--blue);
+    margin: 20px 0 30px;
+}
+
+/* Moving name */
+
+.name-container {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.moving-name {
+    width: max-content;
+
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--blue);
+
+    white-space: nowrap;
+
+    animation: moveName 12s linear infinite;
+}
+
+@keyframes moveName {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+.eyebrow,
+.section-label {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   PERSONAL EXPERIENCE / CV
+========================================= */
+
+.experience-section {
+    background: #f7fafc;
+    padding: 40px 20px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    border: 1px solid green;
+    background: white;
+}
+
+.cv-table th,
+.cv-table td {
+    border: 1px solid green;
+    padding: 15px;
+    text-align: left;
+}
+
+.cv-table th {
+    background: lightblue;
+    color: #102b45;
+    font-weight: bold;
+}
+
+.cv-table td {
+    color: #202b38;
+}
+
+
+/* =========================================
+   CONTACTS PAGE
+========================================= */
+
+.contacts-section {
+    background: #f4f8fc;
+    padding: 40px 20px;
+}
+
+.contact-details {
+    margin: 25px 0;
+    padding: 20px;
+
+    background: #e7f2fc;
+    border-left: 4px solid var(--blue);
+}
+
+.contact-details p {
+    margin: 8px 0;
+}
+
+.contact-details a {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.contacts-section hr {
+    border: none;
+    border-top: 2px solid var(--line);
+    margin: 30px 0;
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 25px;
+
+    border: 1px solid lightblue;
+    background: #ffffff;
+}
+
+.contact-form label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    color: #202b38;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #9ba9b8;
+    border-radius: 3px;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--blue);
+}
+
+/* Email copy checkbox */
+
+.contact-form .copy-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.copy-option input {
+    width: auto;
+}
+
+/* Send button */
+
+.contact-form button {
+    margin-top: 20px;
+
+    padding: 10px 22px;
+
+    background: green;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #101010;
+}
+
+
+/* =========================================
+   HOBBIES PAGE
+========================================= */
+
+.hobbies-section {
+    background: lightblue;
+    color: #102b45;
+
+    padding: 40px 25px;
+
+    border-radius: 5px;
+}
+
+.hobbies-section h2,
+.hobbies-section h3 {
+    color: #123e68;
+}
+
+.hobbies-section ol,
+.hobbies-section ul {
+    padding-left: 35px;
+    margin-bottom: 25px;
+}
+
+.hobbies-section li {
+    padding: 5px 0;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 35px 0 25px;
+    border-top: 2px solid var(--line);
+}
+
+/* Bottom navigation */
+
+.bottom-navigation {
+    margin-bottom: 25px;
+}
+
+/* Green copyright */
+
+.copyright {
+    color: green;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 640px) {
+
+    .page {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .navigation {
+        gap: 8px;
+    }
+
+    .navigation a {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .moving-name {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+
+    .experience-section,
+    .contacts-section {
+        padding: 30px 12px;
+    }
+
+    .cv-table th,
+    .cv-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .moving-name {
+        animation: none;
+        white-space: normal;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+}
